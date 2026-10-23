@@ -1,24 +1,21 @@
 import { supabase } from "@/lib/supabase";
-import { useNavigate } from "react-router-dom";
 import logo from "@/assets/images/sarah-logo.jpg";
 
 const LogIn = () => {
 
-  const navigate = useNavigate();
 
   const login = async () => {
-    const { error} = await supabase.auth.signInWithOAuth({
+    const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
+      options: {
+        redirectTo: `${window.location.origin}/`,
+      },
     });
-
+  
     if (error) {
-      console.error(error);
-      return;
+      console.error("Google login failed:", error.message);
     }
-
-    navigate("/");
   };
-
   return (
     <div className="flex min-h-screen bg-[#FAFAF8]">
       {/* Left — brand panel */}
