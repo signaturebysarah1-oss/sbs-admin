@@ -295,7 +295,7 @@ export type UpdateCartOrderPaymentPayload = {
 export type UpdateCartOrderFulfillmentPayload = {
   shippingTrackingNumber?: string | null;
   shippingTrackingUrl?: string | null;
-  shippingDetails?: unknown | null;
+  shippingDetails?: string | null;
 };
 
 export type CustomizationOption = {
