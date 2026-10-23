@@ -1,0 +1,1 @@
+export type statusType = "archived" | "draft" | "success" | "failed" | "highlighted" | "published"
