@@ -10,7 +10,6 @@ import {
   SidebarFooter,
   SidebarRail,
   Sidebar,
-  SidebarTrigger,
 } from "../../ui/sidebar";
 import { Sheet, SheetContent, SheetTrigger } from "../../ui/sheet";
 import logo from "../../../assets/images/sarah-logo.jpg";
