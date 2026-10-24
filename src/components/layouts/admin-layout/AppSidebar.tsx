@@ -10,6 +10,7 @@ import {
   SidebarFooter,
   SidebarRail,
   Sidebar,
+  SidebarTrigger,
 } from "../../ui/sidebar";
 import { Sheet, SheetContent, SheetTrigger } from "../../ui/sheet";
 import logo from "../../../assets/images/sarah-logo.jpg";
@@ -37,7 +38,7 @@ const navMain = [
     items: [
       {
         title: "Dahsboard",
-        url: "/",
+        url: "/home",
         iconNormal: usersIcon,
         iconActive: activeIcon1,
       },
@@ -125,13 +126,16 @@ function NavContent({ onNavigate }: { onNavigate?: () => void }) {
 
   return (
     <>
-    <div className="flex items-center gap-2 px-4 py-3">
+   <div className="bg-[#18120E] h-full justify-between flex flex-col">
+   <div className="flex items-center gap-2 px-4 py-3 bg-[#18120E]">
     <img className="w-14 h-14" src={logo} alt="logo" />
-    <p className="font-semibold text-3xl lg:text-[38px] text-[#002E21]">
+    <p className="font-semibold text-3xl lg:text-[38px] text-[white]">
         SBS
     </p>
   </div>
-      <div className="flex-1 pt-10 px-4">
+  {/* <SidebarTrigger className="text-white hover:bg-[#18120E] hover:text-white" /> */}
+
+      <div className="flex-1  bg-[#18120E]  pt-10 px-4">
         {navMain.map((group) => (
           <div key={group.title}>
             <ul className="flex flex-col gap-1">
@@ -148,7 +152,7 @@ function NavContent({ onNavigate }: { onNavigate?: () => void }) {
                       onClick={onNavigate}
                       className={`flex items-center gap-2 py-2 mb-3 px-3 rounded-[20px] text-sm font-medium transition-colors ${
                         isActive
-                          ? "text-white [background:linear-gradient(233.89deg,#A0F88A_-3.62%,#C9A227_47.04%)]"
+                          ? "text-white bg-[linear-gradient(135deg,#A67C00_0%,#18120E_100%)] "
                           : "text-[#404944] hover:bg-transparent!"
                       }`}
                     >
@@ -182,6 +186,7 @@ function NavContent({ onNavigate }: { onNavigate?: () => void }) {
           Log out
         </button>
       </div>
+   </div>
     </>
   );
 }
@@ -214,7 +219,7 @@ export function AppSidebar() {
 
   const handleLogout = () => {
     localStorage.removeItem("accessToken");
-    navigate("/auth/login");
+    navigate("/");
   };
 
   const { data } = useQuery({
@@ -245,6 +250,7 @@ export function AppSidebar() {
       </p>
      </div>
     </div>
+
   </SidebarHeader>
       <SidebarContent className="bg-[#18120E] pt-10">
         {navMain.map((group) => (

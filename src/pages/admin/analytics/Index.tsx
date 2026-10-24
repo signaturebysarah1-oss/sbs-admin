@@ -409,7 +409,7 @@ export default function AnalyticsPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#F8F6F2] p-4 md:p-6 lg:p-8">
+    <main className="min-h-screen bg-[transparent] p-4 md:p-6 lg:p-8">
       <div className="mx-auto max-w-[1600px] space-y-8">
         {/* Header */}
         <div className="flex flex-col justify-between gap-5 lg:flex-row lg:items-end">

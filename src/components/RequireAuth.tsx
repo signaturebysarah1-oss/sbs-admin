@@ -5,7 +5,7 @@ export function RequireAuth() {
   const token = localStorage.getItem("accessToken");
 
   if (!token) {
-    return <Navigate to="/auth/login" state={{ from: location }} replace />;
+    return <Navigate to="/" state={{ from: location }} replace />;
   }
 
   return <Outlet />;
@@ -15,7 +15,7 @@ export function RedirectIfAuthed() {
     const token = localStorage.getItem("accessToken");
   
     if (token) {
-      return <Navigate to="/" replace />;
+      return <Navigate to="/home" replace />;
     }
   
     return <Outlet />;
